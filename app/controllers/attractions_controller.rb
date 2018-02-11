@@ -11,9 +11,13 @@ class AttractionsController < ApplicationController
   end
 
   def show
-    @attraction = Attraction.find_by(:id => params[:id])
+    @attraction = Attraction.find_by(id:params[:id])
   end
 
+  def edit
+    @attraction = Attraction.find_by(id:params[:id])
+  end
+  
   private
 
   def attraction_params
