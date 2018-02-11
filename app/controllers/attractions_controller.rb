@@ -9,7 +9,10 @@ class AttractionsController < ApplicationController
   end
 
   def create
-    @attraction = Attraction.create(attraction_params)
+    @attraction = Attraction.new(attraction_params)
+    if @attraction.save
+       redirect_to attraction_path(@attraction)
+    end
   end
 
   def show
