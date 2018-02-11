@@ -4,8 +4,9 @@ class RidesController < ApplicationController
   def create
     @ride = Ride.new(ride_params)
     message = @ride.take_ride
-    binding.pry
-    message
+    if @ride.save
+      message
+    end
   end
 
   private
