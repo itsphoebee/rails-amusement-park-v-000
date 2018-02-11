@@ -4,7 +4,7 @@ class RidesController < ApplicationController
   def new
     @ride = Ride.create(ride_params)
     @message = @ride.take_ride
-    redirect_to user_path(@ride.user, notice:@message)
+    redirect_to user_path(@ride.user, :message => @message)
   end
 
   private
