@@ -5,8 +5,8 @@ class RidesController < ApplicationController
     @ride = Ride.new(ride_params)
     message = @ride.take_ride
     if @ride.save
-      message
       redirect_to user_path(@ride.user)
+      message
     end
   end
 
