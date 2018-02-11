@@ -2,8 +2,8 @@ class RidesController < ApplicationController
 
   def create
     @ride = Ride.new(ride_params)
-    @ride.take_ride
-    if @message == true
+    message = @ride.take_ride
+    if @ride.save
  +        flash[:notice] = "Thanks for riding the #{@attraction.name}!"
  +      else
  +        flash[:notice] = @message
