@@ -6,6 +6,7 @@ class RidesController < ApplicationController
     message = @ride.take_ride
     if @ride.save
       message
+      redirect_to user_path(@ride.user)
     end
   end
 
