@@ -1,5 +1,5 @@
 <h1>List of all Attractions</h1>
- <%= @attractions.each do |attraction| %>
+ <% @attractions.each do |attraction| %>
 
  <% if current_user.admin %>
  <%= "#{attraction.name}"%>
