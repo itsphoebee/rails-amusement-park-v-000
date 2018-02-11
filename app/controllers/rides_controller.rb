@@ -3,10 +3,9 @@ class RidesController < ApplicationController
 
   def new
     @ride = Ride.new(ride_params)
-    message = @ride.take_ride
+    @message = @ride.take_ride
     @ride.save
-    flash[:notice] = message
-    redirect_to user_path(@ride.user)
+    redirect_to user_path(@ride.user, :message => @message)
   end
 
   private
