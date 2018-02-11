@@ -5,7 +5,6 @@ class RidesController < ApplicationController
     @ride = Ride.new(ride_params)
     message = @ride.take_ride
     @ride.save
-    binding.pry
     flash[:notice] = message
     redirect_to user_path(@ride.user)
   end
