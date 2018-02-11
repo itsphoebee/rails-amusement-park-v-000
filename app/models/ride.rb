@@ -9,11 +9,9 @@ class Ride < ActiveRecord::Base
     
     if attraction.tickets > user.tickets && attraction.min_height > user.height
       "Sorry. You do not have enough tickets to ride the Roller Coaster. You are not tall enough to ride the Roller Coaster."
-    elsif
-      attraction.min_height > user.height
+    elsif attraction.min_height > user.height
       "Sorry. You are not tall enough to ride the #{attraction.name}."
-    elsif
-      attraction.tickets > user.tickets
+    elsif attraction.tickets > user.tickets
       "Sorry. You do not have enough tickets to ride the #{attraction.name}."
     else
       #binding.pry
