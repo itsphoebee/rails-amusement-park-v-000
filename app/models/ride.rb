@@ -14,7 +14,7 @@ class Ride < ActiveRecord::Base
     elsif attraction.tickets > user.tickets
       "Sorry. You do not have enough tickets to ride the #{attraction.name}."
     else
-      binding.pry
+      #binding.pry
       user.tickets = user.tickets - attraction.tickets
       user.nausea = user.nausea + attraction.nausea_rating
       user.happiness = user.happiness + attraction.happiness_rating
