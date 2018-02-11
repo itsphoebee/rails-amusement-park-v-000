@@ -7,7 +7,6 @@ class RidesController < ApplicationController
     @ride.save
     flash[:notice] = message
     redirect_to user_path(@ride.user)
-    
   end
 
   private
