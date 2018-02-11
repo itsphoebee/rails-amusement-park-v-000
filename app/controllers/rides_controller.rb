@@ -5,9 +5,9 @@ class RidesController < ApplicationController
 
   def create
     @ride = Ride.new(ride_params)
-    @notice = @ride.take_ride
+    @ride.take_ride
 
-    redirect_to user_path(@ride.user), notice: @notice
+    redirect_to user_path(@ride.user)
   end
 
   private
