@@ -1,7 +1,7 @@
 require 'pry'
 class RidesController < ApplicationController
 
-  def create
+  def new
     @ride = Ride.new(ride_params)
     message = @ride.take_ride
     @ride.save
